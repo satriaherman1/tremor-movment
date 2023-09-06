@@ -12,7 +12,17 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "baseUrl": "./",
+    "paths": {
+      "@components/*": ["components/*"],
+      "@services/*": ["services/*"],
+
+      "@config/*": ["config/*"],
+      "@styles/*": ["styles/*"]
+      // Tambahkan path lainnya sesuai kebutuhan proyek Anda.
+    },
+    "incremental": true
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]

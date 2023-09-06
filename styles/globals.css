@@ -14,3 +14,22 @@ a {
 * {
   box-sizing: border-box;
 }
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins&family=Roboto:wght@300;400&display=swap");
+
+body #root {
+  font-family: "Poppins", sans-serif;
+}
+
+#root button {
+  font-family: "Poppins";
+}
+
+#root h1,
+#root h2,
+#root h3,
+#root h4,
+#root h5,
+#root h6 {
+  font-family: "Poppins";
+}
