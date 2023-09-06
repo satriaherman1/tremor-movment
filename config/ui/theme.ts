@@ -22,7 +22,27 @@ const theme = extendTheme({
 
     // Tambahkan palet warna lainnya sesuai kebutuhan Anda
   },
-  components: {},
+  components: {
+    Button: {
+      baseStyle: {
+        borderRadius: "10px", // Ubah nilai sesuai kebutuhan
+        display: "block",
+      },
+      sizes: {
+        sm: {
+          height: "fit-content",
+
+          padding: "10px 27px",
+        },
+
+        md: {
+          height: "fit-content",
+
+          padding: "15px 40px",
+        },
+      },
+    },
+  },
 });
 
 export default theme;

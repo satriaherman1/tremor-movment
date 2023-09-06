@@ -8,6 +8,7 @@ import {
   Text,
   useMediaQuery,
 } from "@chakra-ui/react";
+import HeaderSwiper from "@components/container/home/HeaderSwiper";
 import { mediumBreakpoints } from "@config/ui/variables";
 
 const HomeHeader = () => {
@@ -16,6 +17,7 @@ const HomeHeader = () => {
     <Flex
       justifyContent="space-between"
       flexDir={mediumScreen ? "row" : "column"}
+      columnGap="80px"
       paddingY="40px"
     >
       <Box color="white" flexBasis={mediumScreen ? "47%" : "100%"}>
@@ -30,7 +32,7 @@ const HomeHeader = () => {
 
         <Flex mt="40px" justifyContent="space-between">
           <Flex gap="30px">
-            <Button size="lg">Contact Us</Button>
+            <Button size="md">Contact Us</Button>
 
             <Button
               variant="link"
@@ -60,6 +62,11 @@ const HomeHeader = () => {
             </Box>
           </Flex>
         </Flex>
+      </Box>
+
+      {/* swiper */}
+      <Box flexBasis={mediumScreen ? "47%" : "100%"} overflowX="hidden">
+        <HeaderSwiper />
       </Box>
     </Flex>
   );

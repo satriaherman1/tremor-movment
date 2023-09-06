@@ -50,8 +50,10 @@ const Navigation = () => {
       </Flex>
 
       <Flex gap="20px">
-        <Button colorScheme="black">Sign Up</Button>
-        <Button>Login</Button>
+        <Button colorScheme="black" size="sm">
+          Sign Up
+        </Button>
+        <Button size="sm">Login</Button>
       </Flex>
     </Flex>
   );
