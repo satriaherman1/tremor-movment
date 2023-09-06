@@ -1,6 +1,8 @@
 import { Box, BoxProps, Container } from "@chakra-ui/react";
 import Navigation from "@components/commons/Navigation";
 import HomeHeader from "@components/container/home/Header";
+import HotelStatistics from "@components/container/home/HotelStatistics";
+import HomeMainContent from "@components/container/home/MainContent";
 import Head from "next/head";
 
 export default function Home() {
@@ -32,9 +34,12 @@ export default function Home() {
             <Container maxW="1400px">
               <Navigation />
               <HomeHeader />
+              <HotelStatistics />
             </Container>
           </Box>
         </Box>
+
+        <HomeMainContent />
       </Box>
     </>
   );

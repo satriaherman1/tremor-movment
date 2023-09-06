@@ -43,6 +43,8 @@ const theme = extendTheme({
       },
     },
   },
+
+  initialColorMode: "dark",
 });
 
 export default theme;

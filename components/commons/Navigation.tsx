@@ -1,10 +1,21 @@
-import { Box, Button, Flex, Image } from "@chakra-ui/react";
+import { HamburgerIcon } from "@chakra-ui/icons";
+import {
+  Box,
+  Button,
+  Flex,
+  IconButton,
+  Image,
+  useMediaQuery,
+} from "@chakra-ui/react";
+import { mediumBreakpoints } from "@config/ui/variables";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { memo } from "react";
 
 const Navigation = () => {
   const router = useRouter();
+
+  const [mediumScreen] = useMediaQuery(mediumBreakpoints);
 
   const navList = [
     {
@@ -35,26 +46,41 @@ const Navigation = () => {
     >
       <Image src="/logo.png" width="150px" alt="logo" />
 
-      <Flex justifyContent="space-between" gap="30px">
-        {navList.map(({ path, name }) => (
-          <Link key={path} href={name}>
-            <Box
-              as="span"
-              opacity={router.pathname === path ? 1 : 0.7}
-              textTransform="capitalize"
-            >
-              {name}
-            </Box>
-          </Link>
-        ))}
-      </Flex>
+      {mediumScreen ? (
+        <>
+          <Flex justifyContent="space-between" gap="30px">
+            {navList.map(({ path, name }) => (
+              <Link key={path} href={name}>
+                <Box
+                  as="span"
+                  opacity={router.pathname === path ? 1 : 0.7}
+                  textTransform="capitalize"
+                >
+                  {name}
+                </Box>
+              </Link>
+            ))}
+          </Flex>
 
-      <Flex gap="20px">
-        <Button colorScheme="black" size="sm">
-          Sign Up
-        </Button>
-        <Button size="sm">Login</Button>
-      </Flex>
+          <Flex gap="20px">
+            <Button colorScheme="black" size="sm">
+              Sign Up
+            </Button>
+            <Button size="sm">Login</Button>
+          </Flex>
+        </>
+      ) : (
+        <IconButton
+          aria-label="hamburger"
+          borderRadius="4px"
+          padding="8px"
+          variant="link"
+          color="white"
+          fontSize="28px"
+        >
+          <HamburgerIcon />
+        </IconButton>
+      )}
     </Flex>
   );
 };

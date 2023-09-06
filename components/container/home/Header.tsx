@@ -16,12 +16,17 @@ const HomeHeader = () => {
   return (
     <Flex
       justifyContent="space-between"
-      flexDir={mediumScreen ? "row" : "column"}
+      flexDir={mediumScreen ? "row" : "column-reverse"}
       columnGap="80px"
       paddingY="40px"
+      rowGap="60px"
     >
       <Box color="white" flexBasis={mediumScreen ? "47%" : "100%"}>
-        <Heading as="h1" fontSize="58px" fontWeight="600">
+        <Heading
+          as="h1"
+          fontSize={mediumScreen ? "58px" : "36px"}
+          fontWeight="600"
+        >
           Find Best Hotel Services and get your Dream Space
         </Heading>
 
@@ -30,7 +35,12 @@ const HomeHeader = () => {
           voluptatum libero consequatur autem dolore molestia.
         </Text>
 
-        <Flex mt="40px" justifyContent="space-between">
+        <Flex
+          mt="40px"
+          justifyContent="space-between"
+          flexDir={mediumScreen ? "row" : "column-reverse"}
+          rowGap="30px"
+        >
           <Flex gap="30px">
             <Button size="md">Contact Us</Button>
 
