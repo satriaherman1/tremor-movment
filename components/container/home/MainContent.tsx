@@ -11,10 +11,41 @@ import {
   Text,
   useMediaQuery,
 } from "@chakra-ui/react";
+import MembershipBenefit, {
+  IMemberShipBenefit,
+} from "@components/fragments/membership-benefit";
 import { containerMaxWidth, mediumBreakpoints } from "@config/ui/variables";
 
 const HomeMainContent = () => {
   const [mediumScreen] = useMediaQuery(mediumBreakpoints);
+
+  const benefitList: IMemberShipBenefit[] = [
+    {
+      no: "01",
+      title: "Exclusive Hotel Deals",
+      description:
+        "Gain access to an array of exclusive deals and special discounts designed specifically for our valued members, ensuring that every hotel stay is uniquely tailored to match your individual preferences and desires.",
+    },
+    {
+      no: "02",
+      title: "Exclusive Hotel Deals",
+      description:
+        "These exceptional offers are designed to elevate your travel experiences, ensuring that you enjoy the utmost comfort, luxury, and savings with every booking.",
+    },
+    {
+      no: "03",
+      title: "Exclusive Hotel Deals",
+      description:
+        "These exceptional offers are designed to elevate your travel experiences, ensuring that you enjoy the utmost comfort, luxury, and savings with every booking.",
+    },
+    {
+      no: "04",
+      title: "Exclusive Hotel Deals",
+      description:
+        "These exceptional offers are designed to elevate your travel experiences, ensuring that you enjoy the utmost comfort, luxury, and savings with every booking.",
+    },
+  ];
+
   return (
     <Box as="main" bgColor="#121212" color="white" pt="180px">
       <Container maxW={containerMaxWidth}>
@@ -87,12 +118,14 @@ const HomeMainContent = () => {
             </Heading>
           </Box>
 
-          <Divider
-            orientation="vertical"
-            height="200px"
-            width="0.3px"
-            bg="white"
-          />
+          {mediumScreen && (
+            <Divider
+              orientation="vertical"
+              height="200px"
+              width="0.3px"
+              bg="white"
+            />
+          )}
 
           <Box flexBasis={mediumScreen ? "55%" : "100%"}>
             <Text lineHeight="35px">
@@ -129,7 +162,27 @@ const HomeMainContent = () => {
             </Text>
           </Box>
 
-          <Flex></Flex>
+          <Flex
+            flexDir={mediumScreen ? "row" : "column-reverse"}
+            mt="90px"
+            rowGap="40px"
+            justifyContent="space-between"
+          >
+            <Box
+              display="flex"
+              flexDir="column"
+              rowGap="50px"
+              flexBasis={mediumScreen ? "43%" : "100%"}
+            >
+              {benefitList.map((benefit) => (
+                <MembershipBenefit key={benefit.no} {...benefit} />
+              ))}
+            </Box>
+
+            <Box flexBasis={mediumScreen ? "43%" : "100%"}>
+              <Image src="/img/home/be-member.jpg" width="100%" />
+            </Box>
+          </Flex>
         </Box>
       </Container>
     </Box>

@@ -15,6 +15,7 @@ export default function Home() {
 
   const decoratorStyle: BoxProps = {
     bgImage: "/img/header-decorator.svg",
+    backgroundRepeat: "no-repeat",
     width: "100%",
     height: "100%",
     bgPos: "0 90%",

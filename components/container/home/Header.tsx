@@ -75,9 +75,11 @@ const HomeHeader = () => {
       </Box>
 
       {/* swiper */}
-      <Box flexBasis={mediumScreen ? "47%" : "100%"} overflowX="hidden">
-        <HeaderSwiper />
-      </Box>
+      {mediumScreen && (
+        <Box flexBasis={mediumScreen ? "47%" : "100%"} overflowX="hidden">
+          <HeaderSwiper />
+        </Box>
+      )}
     </Flex>
   );
 };
