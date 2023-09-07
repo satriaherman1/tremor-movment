@@ -1,4 +1,4 @@
-import { db } from "@src/config/firebase";
+import { db } from "@config/firebase";
 import {
   arrayUnion,
   collection,
