@@ -44,7 +44,7 @@ const HotelStatistics = () => {
   return (
     <Box
       bg="white"
-      padding="30px 50px"
+      padding={mediumScreen ? "30px 50px" : "20px 30px"}
       borderRadius="20px"
       marginBottom="-90px"
       position="relative"

@@ -34,3 +34,8 @@ body #root {
 #root h6 {
   font-family: "Poppins";
 }
+
+#root a {
+  width: fit-content;
+  display: block;
+}

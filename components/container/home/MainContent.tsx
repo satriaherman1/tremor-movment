@@ -1,6 +1,7 @@
 import {
   Avatar,
   Box,
+  BoxProps,
   Button,
   Container,
   Divider,
@@ -11,13 +12,26 @@ import {
   Text,
   useMediaQuery,
 } from "@chakra-ui/react";
+import BoltIcon from "@components/commons/icons/Bolt";
+import PresentationGraphIcon from "@components/commons/icons/PresentationGraph";
+import UserGroupRoundedIcon from "@components/commons/icons/UserGroupRounded";
+import BecomeMentor from "@components/container/home/BecomeMentor";
+import LatestBlog from "@components/container/home/LatestBlog";
+import GrowthStrategiesBox, {
+  IGrowthStrategiesBox,
+} from "@components/fragments/growth-strategies-box";
 import MembershipBenefit, {
   IMemberShipBenefit,
 } from "@components/fragments/membership-benefit";
-import { containerMaxWidth, mediumBreakpoints } from "@config/ui/variables";
+import {
+  containerMaxWidth,
+  largeBreakpoints,
+  mediumBreakpoints,
+} from "@config/ui/variables";
 
 const HomeMainContent = () => {
   const [mediumScreen] = useMediaQuery(mediumBreakpoints);
+  const [largeScreen] = useMediaQuery(largeBreakpoints);
 
   const benefitList: IMemberShipBenefit[] = [
     {
@@ -46,8 +60,43 @@ const HomeMainContent = () => {
     },
   ];
 
+  const growthStrategiesList: IGrowthStrategiesBox[] = [
+    {
+      icon: <BoltIcon fontSize="36px" />,
+      title: "Turning Insights into Opportunities",
+      description:
+        "In the vibrant sphere of hotel bookings, experience reigns supreme. Every member of our Booking Analysis Team has walked the challenging path of hotel booking trading without the support of advanced systems.",
+    },
+    {
+      icon: <PresentationGraphIcon fontSize="36px" />,
+      title: "Veterans in Hotel Profit Strategies and Market Dynamicss",
+      description:
+        "In the vibrant sphere of hotel bookings, experience reigns supreme. Every member of our Booking Analysis Team has walked the challenging path of hotel booking trading without the support of advanced systems.",
+    },
+    {
+      icon: <UserGroupRoundedIcon fontSize="36px" />,
+      title: "To Our Hotel Booking Traders: Experience Meets Innovation",
+      description:
+        "In the vibrant sphere of hotel bookings, experience reigns supreme. Every member of our Booking Analysis Team has walked the challenging path of hotel booking trading without the support of advanced systems.",
+    },
+  ];
+
+  const h1FontSize = mediumScreen ? "40px" : "28px";
+  const gradientTextStyle: BoxProps = {
+    bg: "linear-gradient(102deg, #1681E4 35.89%, #E657E5 87.46%)",
+    bgClip: "text",
+    fill: "transparent",
+  };
+
   return (
-    <Box as="main" bgColor="#121212" color="white" pt="180px">
+    <Box
+      as="main"
+      bgColor="#121212"
+      color="white"
+      pt="180px"
+      overflowY="hidden"
+      pb="150px"
+    >
       <Container maxW={containerMaxWidth}>
         <Flex
           justifyContent="space-between"
@@ -56,14 +105,9 @@ const HomeMainContent = () => {
         >
           <Box flexBasis={mediumScreen ? "45%" : "100%"}>
             <Text>About Us</Text>
-            <Heading as="h1" fontSize="40px">
+            <Heading as="h1" fontSize={h1FontSize}>
               Innovating Strategy and Results at{" "}
-              <Box
-                as="span"
-                bg="linear-gradient(102deg, #1681E4 35.89%, #E657E5 87.46%)"
-                bgClip="text"
-                fill="transparent"
-              >
+              <Box as="span" {...gradientTextStyle}>
                 D-edge
               </Box>{" "}
             </Heading>
@@ -103,15 +147,14 @@ const HomeMainContent = () => {
         >
           <Box flexBasis={mediumScreen ? "30%" : "100%"}>
             <Text>Testimonials</Text>
-            <Heading as="h1" fontSize="40px" marginTop="20px" lineHeight="150%">
+            <Heading
+              as="h1"
+              fontSize={h1FontSize}
+              marginTop="20px"
+              lineHeight="150%"
+            >
               Words from Our
-              <Box
-                as="span"
-                bg="linear-gradient(102deg, #1681E4 35.89%, #E657E5 87.46%)"
-                bgClip="text"
-                fill="transparent"
-                mx="12px"
-              >
+              <Box {...gradientTextStyle} as="span" mx="12px">
                 Satisfied
               </Box>
               User
@@ -180,10 +223,101 @@ const HomeMainContent = () => {
             </Box>
 
             <Box flexBasis={mediumScreen ? "43%" : "100%"}>
-              <Image src="/img/home/be-member.jpg" width="100%" />
+              <Image
+                src="/img/home/be-member.jpg"
+                width="100%"
+                alt="be member"
+              />
             </Box>
           </Flex>
         </Box>
+        {/* end be member */}
+
+        {/* hotel booking */}
+        <Box mt="180px">
+          <Heading textAlign="center">Hotel Booking Trading</Heading>
+
+          <Flex
+            mt="70px"
+            justifyContent="space-between"
+            flexDir={mediumScreen ? "row" : "column"}
+            rowGap="50px"
+          >
+            <Box flexBasis={mediumScreen ? "46%" : "100%"}>
+              <Image
+                src="/img/home/hotel-booking.jpg"
+                width="100%"
+                alt="tutorial"
+              />
+            </Box>
+            <Box flexBasis={mediumScreen ? "46%" : "100%"}>
+              <Text lineHeight="35px">
+                At D-edge, we redefine the art of trading, where innovation
+                meets strategy and results. With a passion for financial
+                empowerment, we have embarked on a journey to provide you with a
+                seamless and intuitive trading experience. Our team of seasoned
+                experts combines their expertise with cutting-edge technology,
+                ensuring that your trading endeavors are backed by reliable
+                insights and a user-centric approach.
+              </Text>
+              <Button
+                variant="outlined"
+                mt="60px"
+                bg="#1A1A1A"
+                _hover={{ background: "#303030" }}
+                border="1px solid  #666666"
+              >
+                Read More
+              </Button>
+            </Box>
+          </Flex>
+        </Box>
+        {/* end hotel booking */}
+
+        {/* growth strategies */}
+        <Box mt="180px">
+          <Flex
+            justifyContent="space-between"
+            flexDir={mediumScreen ? "row" : "column"}
+            rowGap="20px"
+          >
+            <Heading as="h1" fontSize={h1FontSize}>
+              Market Team&rsquo;s{" "}
+              <Box as="span" {...gradientTextStyle}>
+                Growth
+              </Box>{" "}
+              Strategies
+            </Heading>
+
+            <Button colorScheme="primary" display="block" w="fit-content">
+              See Our Team
+            </Button>
+          </Flex>
+
+          <Flex
+            rowGap="50px"
+            justifyContent="space-between"
+            mt="40px"
+            flexWrap="wrap"
+          >
+            {growthStrategiesList.map((gs) => (
+              <GrowthStrategiesBox
+                flexBasis={largeScreen ? "32%" : mediumScreen ? "48%" : "100%"}
+                key={gs.title}
+                {...gs}
+              />
+            ))}
+          </Flex>
+        </Box>
+        {/* end growth strategies */}
+
+        {/* Latest Blog */}
+        <LatestBlog mt="150px" />
+        {/* end Latest Blog */}
+
+        {/* become mentor */}
+        <BecomeMentor mt="150px" />
+        {/* end become mentor */}
       </Container>
     </Box>
   );

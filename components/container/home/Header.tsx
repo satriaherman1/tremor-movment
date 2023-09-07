@@ -38,7 +38,7 @@ const HomeHeader = () => {
         <Flex
           mt="40px"
           justifyContent="space-between"
-          flexDir={mediumScreen ? "row" : "column-reverse"}
+          flexDir={mediumScreen ? "row" : "column"}
           rowGap="30px"
         >
           <Flex gap="30px">

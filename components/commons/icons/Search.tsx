@@ -15,13 +15,13 @@ const SearchIcon = (props: IconProps) => {
           cy="16.9167"
           r="11.0833"
           stroke="white"
-          stroke-width="2"
+          strokeWidth="2"
         />
         <path
           d="M25.082 25.0833L29.1654 29.1667"
           stroke="white"
-          stroke-width="2"
-          stroke-linecap="round"
+          strokeWidth="2"
+          strokeLinecap="round"
         />
       </svg>
     </Icon>

@@ -38,7 +38,7 @@ const theme = extendTheme({
         md: {
           height: "fit-content",
 
-          padding: "15px 40px",
+          padding: "20px 50px",
         },
       },
     },
