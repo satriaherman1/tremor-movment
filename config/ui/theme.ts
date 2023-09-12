@@ -2,8 +2,10 @@
 import { extendTheme } from "@chakra-ui/react";
 import {
   blackColor,
+  blackColorClick,
   blackColorHover,
   primaryColor,
+  primaryColorClick,
   primaryColorHover,
 } from "@config/ui/color";
 
@@ -12,12 +14,14 @@ const theme = extendTheme({
     primary: {
       500: primaryColor,
       600: primaryColorHover,
+      700: primaryColorClick,
       // Tambahkan warna lain sesuai kebutuhan Anda
     },
 
     black: {
       500: blackColor,
       600: blackColorHover,
+      700: blackColorClick,
     },
 
     // Tambahkan palet warna lainnya sesuai kebutuhan Anda

@@ -116,6 +116,8 @@ const LatestBlog = (props: BoxProps) => {
           />
         ))}
       </Flex>
+
+      
     </Box>
   );
 };
