@@ -8,7 +8,6 @@ import {
   Flex,
   Heading,
   Image,
-  Skeleton,
   Text,
   useMediaQuery,
 } from "@chakra-ui/react";
@@ -89,14 +88,17 @@ const HomeMainContent = () => {
   };
 
   return (
-    <Box
-      as="main"
-      bgColor="#121212"
-      color="white"
-      pt="180px"
-      overflowY="hidden"
-      pb="150px"
-    >
+    <Box as="main" color="white" pt="180px" pb="150px">
+      <Image
+        src="/img/home/dashboard.png"
+        width="80%"
+        display="block"
+        mx="auto"
+        marginTop="-380px"
+        marginBottom="190px"
+        zIndex={999}
+        pos="relative"
+      />
       <Container maxW={containerMaxWidth}>
         <Flex
           justifyContent="space-between"
@@ -106,10 +108,7 @@ const HomeMainContent = () => {
           <Box flexBasis={mediumScreen ? "45%" : "100%"}>
             <Text>About Us</Text>
             <Heading as="h1" fontSize={h1FontSize}>
-              Innovating Strategy and Results at{" "}
-              <Box as="span" {...gradientTextStyle}>
-                D-edge
-              </Box>{" "}
+              Innovating Strategy and Results at D-edge
             </Heading>
           </Box>
 
@@ -124,19 +123,30 @@ const HomeMainContent = () => {
               user-centric approach.
             </Text>
 
-            <Button colorScheme="primary" mt="50px">
+            <Button
+              bg="linear-gradient(261deg, #903AFD 0.37%, #E657E5 175.81%)"
+              color="white"
+              _hover={{
+                bg: " linear-gradient(261deg, #903AFD 0.37%, #E657E5 175.81%)",
+              }}
+              mt="50px"
+            >
               Download Ebook
             </Button>
           </Box>
         </Flex>
 
         <Box py="140px">
-          <Image
-            src="/img/home/video-home.jpg"
-            width="full"
-            alt="tutorial"
-            fallback={<Skeleton height="300px" width="100%" />}
-          />
+          <Box
+            as="iframe"
+            width="100%"
+            height="500px"
+            src="https://www.youtube.com/embed/iogcY_4xGjo?si=E7Q5rZ_1gwx2Q7yj"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          ></Box>
         </Box>
 
         {/* testimonials */}
@@ -153,11 +163,7 @@ const HomeMainContent = () => {
               marginTop="20px"
               lineHeight="150%"
             >
-              Words from Our
-              <Box {...gradientTextStyle} as="span" mx="12px">
-                Satisfied
-              </Box>
-              User
+              Words from Our Satisfied User
             </Heading>
           </Box>
 
@@ -223,11 +229,7 @@ const HomeMainContent = () => {
             </Box>
 
             <Box flexBasis={mediumScreen ? "43%" : "100%"}>
-              <Image
-                src="/img/home/be-member.jpg"
-                width="100%"
-                alt="be member"
-              />
+              <Image src="/img/home/benefit.png" width="100%" alt="be member" />
             </Box>
           </Flex>
         </Box>
@@ -235,8 +237,6 @@ const HomeMainContent = () => {
 
         {/* hotel booking */}
         <Box mt="180px">
-          <Heading textAlign="center">Hotel Booking Trading</Heading>
-
           <Flex
             mt="70px"
             justifyContent="space-between"
@@ -251,7 +251,8 @@ const HomeMainContent = () => {
               />
             </Box>
             <Box flexBasis={mediumScreen ? "46%" : "100%"}>
-              <Text lineHeight="35px">
+              <Heading>Hotel Booking Trading</Heading>
+              <Text lineHeight="35px" mt="20px">
                 At D-edge, we redefine the art of trading, where innovation
                 meets strategy and results. With a passion for financial
                 empowerment, we have embarked on a journey to provide you with a
@@ -263,8 +264,8 @@ const HomeMainContent = () => {
               <Button
                 variant="outlined"
                 mt="60px"
-                bg="#1A1A1A"
-                _hover={{ background: "#303030" }}
+                bg="rgba(255, 255, 255, 0.10)"
+                _hover={{ background: "rgba(255, 255, 255, 0.10)" }}
                 border="1px solid  #666666"
               >
                 Read More

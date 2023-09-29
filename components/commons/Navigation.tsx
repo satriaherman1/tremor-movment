@@ -7,6 +7,7 @@ import {
   Image,
   useMediaQuery,
 } from "@chakra-ui/react";
+import ArrowRightUp from "@components/commons/icons/ArrowRightUp";
 import { mediumBreakpoints } from "@config/ui/variables";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -33,6 +34,10 @@ const Navigation = () => {
     {
       name: "blogs",
       path: "/blogs",
+    },
+    {
+      name: "terms and condition",
+      path: "/term-condition",
     },
   ];
 
@@ -63,10 +68,12 @@ const Navigation = () => {
           </Flex>
 
           <Flex gap="20px">
-            <Button colorScheme="black" size="sm">
-              Sign Up
+            <Button
+              color="primary.500"
+              rightIcon={<ArrowRightUp fontSize="10px" />}
+            >
+              Booking Station
             </Button>
-            <Button size="sm">Login</Button>
           </Flex>
         </>
       ) : (

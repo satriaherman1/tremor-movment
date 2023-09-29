@@ -1,11 +1,4 @@
-import {
-  Box,
-  Divider,
-  Flex,
-  Heading,
-  Text,
-  useMediaQuery,
-} from "@chakra-ui/react";
+import { Box, Divider, Flex, Text, useMediaQuery } from "@chakra-ui/react";
 import BedIcon from "@components/commons/icons/BedIcon";
 import CalendarIcon from "@components/commons/icons/Calendar";
 import PoinOnMapIcon from "@components/commons/icons/PointOnMap";
@@ -21,39 +14,36 @@ const HotelStatistics = () => {
   const statistics: IHotelStatisticBox[] = [
     {
       title: "Check In :",
-      Icon: <CalendarIcon fontSize="35px" />,
+      Icon: <CalendarIcon fontSize="35px" fill="white" />,
       description: "Sun, 28 Aug",
     },
     {
       title: "Check Out :",
-      Icon: <CalendarIcon fontSize="35px" />,
+      Icon: <CalendarIcon fontSize="35px" fill="white" />,
       description: "Tue, 30 Aug",
     },
     {
       title: "Destination :",
-      Icon: <PoinOnMapIcon fontSize="35px" />,
+      Icon: <PoinOnMapIcon fontSize="35px" fill="white" />,
       description: "Paris, France",
     },
     {
       title: "Room & Guest :",
-      Icon: <BedIcon fontSize="35px" />,
+      Icon: <BedIcon fontSize="35px" fill="white" />,
       description: "1 Room, 2 Guest",
     },
   ];
 
   return (
     <Box
-      bg="white"
+      bg="rgba(51, 51, 51, 0.80);"
+      backdropFilter="blur(18px)"
       padding={mediumScreen ? "30px 50px" : "20px 30px"}
+      border=" 2px solid rgba(255, 255, 255, 0.27);"
       borderRadius="20px"
-      marginBottom="-90px"
       position="relative"
       zIndex={4}
     >
-      <Heading as="h2" fontWeight={500}>
-        Hotel & Reservation
-      </Heading>
-
       <Divider bg="#cccccc" height="0.5px" my="20px" />
 
       <Flex

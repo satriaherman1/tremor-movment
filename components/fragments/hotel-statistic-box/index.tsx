@@ -12,15 +12,23 @@ const HotelStatisticBox = ({
   description,
 }: IHotelStatisticBox) => {
   return (
-    <Box bgColor="#F2F2F2" padding="20px 18px" borderRadius="12px" w="100%">
-      <Text color="#999999" fontWeight={500}>
+    <Box w="100%">
+      <Text color="white" fontWeight={500}>
         {title}
       </Text>
 
-      <Flex alignItems="center" gap="8px" mt="12px">
-        {Icon}
-        <Text fontWeight={600}>{description}</Text>
-      </Flex>
+      <Box
+        mt="10px"
+        w="100%"
+        borderRadius="8px"
+        padding="10px 18px"
+        bgColor="rgba(255, 255, 255, 0.10);"
+      >
+        <Flex color="white" alignItems="center" gap="8px">
+          {Icon}
+          <Text fontWeight={600}>{description}</Text>
+        </Flex>
+      </Box>
     </Box>
   );
 };

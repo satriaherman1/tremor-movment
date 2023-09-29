@@ -8,19 +8,14 @@ import Head from "next/head";
 
 export default function Home() {
   const bgSrc = "/img/hero.jpg";
-  const headerStyle: BoxProps = {
-    bg: "linear-gradient(115deg, #1681E4 -8.14%, #E657E5 96.22%);",
-    width: "100%",
-    height: "fit-content",
-  };
 
   const decoratorStyle: BoxProps = {
-    bgImage: "/img/header-decorator.svg",
+    bgImage: "/img/home/header.png",
     backgroundRepeat: "no-repeat",
     width: "100%",
     height: "100%",
-    bgPos: "0 90%",
-    bgSize: "contain",
+    paddingBottom: "280px",
+    bgSize: "100%",
   };
   return (
     <>
@@ -30,8 +25,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Box>
-        <Box as="header" {...headerStyle}>
+      <Box bgColor="#121212">
+        <Box as="header">
           <Box {...decoratorStyle}>
             <Container maxW="1400px">
               <Navigation />
