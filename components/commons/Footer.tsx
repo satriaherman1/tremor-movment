@@ -21,10 +21,6 @@ import {
 import Link from "next/link";
 
 const Footer = (props: BoxProps) => {
-  const gradientStyle: BoxProps = {
-    background: "linear-gradient(137deg, #7B23EB -5.98%, #E657E5 100.46%)",
-  };
-
   const [mediumScreen] = useMediaQuery(mediumBreakpoints);
   const [largeScreen] = useMediaQuery(largeBreakpoints);
 
@@ -34,7 +30,13 @@ const Footer = (props: BoxProps) => {
   };
 
   return (
-    <Box as="footer" {...gradientStyle} {...props} py="40px" color="white">
+    <Box
+      as="footer"
+      bg="rgba(0, 0, 0, 0.30);"
+      {...props}
+      py="40px"
+      color="white"
+    >
       <Container maxWidth={containerMaxWidth}>
         <Flex
           justifyContent="space-between"

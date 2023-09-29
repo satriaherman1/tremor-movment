@@ -9,6 +9,7 @@ import {
   Text,
   useMediaQuery,
 } from "@chakra-ui/react";
+import EasyDecorator from "@components/commons/svg/EasyDecorator";
 import RecommendedArticle, {
   IRecommendedArticle,
 } from "@components/fragments/recommended-blog";
@@ -29,23 +30,23 @@ const LatestBlog = (props: BoxProps) => {
       title:
         "Cryptocurrency Craze Continues: Exploring the Latest Trends in Trading",
       date: "August 14, 2023",
-      imgSrc: "/img/home/blog-1.jpg",
+      imgSrc: "/img/home/blog-2.png",
     },
     {
       title: "Global Stock Exchanges Reach Record Highs Amidst Economic Shifts",
       date: "August 14, 2023",
-      imgSrc: "/img/home/blog-2.jpg",
+      imgSrc: "/img/home/blog-3.png",
     },
     {
       title:
         "Algorithmic Trading's Rise: Examining the Role of AI in Financial Markets",
       date: "August 14, 2023",
-      imgSrc: "/img/home/blog-3.jpg",
+      imgSrc: "/img/home/blog-2.png",
     },
     {
       title: "Market Volatility Surges: Traders Navigate Unpredictable Terrain",
       date: "August 14, 2023",
-      imgSrc: "/img/home/blog-4.jpg",
+      imgSrc: "/img/home/blog-3.png",
     },
   ];
 
@@ -58,8 +59,21 @@ const LatestBlog = (props: BoxProps) => {
   }, []);
 
   return (
-    <Box {...props}>
-      <Flex justifyContent="space-between" alignItems="center">
+    <Box {...props} pos="relative">
+      <EasyDecorator
+        top="-50px"
+        left="-90px"
+        width="800px"
+        height="800px"
+        pos="absolute"
+        zIndex="1"
+      />
+      <Flex
+        justifyContent="space-between"
+        alignItems="center"
+        pos="relative"
+        zIndex={2}
+      >
         <Heading as="h1" fontSize={h1FontSize}>
           Latest Blog
         </Heading>
@@ -70,11 +84,13 @@ const LatestBlog = (props: BoxProps) => {
       <Divider bg="#666666" my="40px" />
 
       <Flex
+        pos="relative"
+        zIndex={2}
         justifyContent="space-between"
         flexDir={mediumScreen ? "row" : "column"}
       >
         <Box flexBasis={mediumScreen ? "47%" : "100%"}>
-          <Image src="/img/home/last-blog.jpg" w="100%" alt="last blog" />
+          <Image src="/img/home/blog-1.png" w="100%" alt="last blog" />
         </Box>
 
         <Box flexBasis={mediumScreen ? "47%" : "100%"}>
@@ -101,7 +117,14 @@ const LatestBlog = (props: BoxProps) => {
         </Box>
       </Flex>
 
-      <Flex flexWrap="wrap" mt="60px" justifyContent="space-between" gap="40px">
+      <Flex
+        pos="relative"
+        zIndex={2}
+        flexWrap="wrap"
+        mt="60px"
+        justifyContent="space-between"
+        gap="40px"
+      >
         {dummyBlogs.map((blog) => (
           <RecommendedArticle
             flexBasis={
@@ -116,8 +139,6 @@ const LatestBlog = (props: BoxProps) => {
           />
         ))}
       </Flex>
-
-      
     </Box>
   );
 };

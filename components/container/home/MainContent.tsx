@@ -14,6 +14,8 @@ import {
 import BoltIcon from "@components/commons/icons/Bolt";
 import PresentationGraphIcon from "@components/commons/icons/PresentationGraph";
 import UserGroupRoundedIcon from "@components/commons/icons/UserGroupRounded";
+import EasyDecorator from "@components/commons/svg/EasyDecorator";
+import WaveDecorator from "@components/commons/svg/wave";
 import BecomeMentor from "@components/container/home/BecomeMentor";
 import LatestBlog from "@components/container/home/LatestBlog";
 import GrowthStrategiesBox, {
@@ -150,52 +152,72 @@ const HomeMainContent = () => {
         </Box>
 
         {/* testimonials */}
-        <Flex
-          justifyContent="space-between"
-          flexDir={mediumScreen ? "row" : "column"}
-          rowGap="50px"
-        >
-          <Box flexBasis={mediumScreen ? "30%" : "100%"}>
-            <Text>Testimonials</Text>
-            <Heading
-              as="h1"
-              fontSize={h1FontSize}
-              marginTop="20px"
-              lineHeight="150%"
-            >
-              Words from Our Satisfied User
-            </Heading>
-          </Box>
+        <Box pos="relative">
+          <EasyDecorator
+            pos="absolute"
+            top="-50px"
+            left="-10vw"
+            width="600px"
+            height="600px"
+          />
 
-          {mediumScreen && (
-            <Divider
-              orientation="vertical"
-              height="200px"
-              width="0.3px"
-              bg="white"
-            />
-          )}
+          <Flex
+            justifyContent="space-between"
+            flexDir={mediumScreen ? "row" : "column"}
+            rowGap="50px"
+            pos="relative"
+            zIndex={2}
+          >
+            <Box flexBasis={mediumScreen ? "30%" : "100%"}>
+              <Text>Testimonials</Text>
+              <Heading
+                as="h1"
+                fontSize={h1FontSize}
+                marginTop="20px"
+                lineHeight="150%"
+              >
+                Words from Our Satisfied User
+              </Heading>
+            </Box>
 
-          <Box flexBasis={mediumScreen ? "55%" : "100%"}>
-            <Text lineHeight="35px">
-              &ldquo;I remember my first day with D-edge and thinking is this
-              really going to change anything well now I can confidently say yes
-              it does&ldquo;
-            </Text>
+            {mediumScreen && (
+              <Divider
+                orientation="vertical"
+                height="200px"
+                width="0.3px"
+                bg="white"
+              />
+            )}
 
-            {/* avatar section */}
-            <Flex mt="60px" gap="20px">
-              <Avatar name="Daisy Moon" src="/avatar/daisy-moon.jpg" />
-              <Box>
-                <Text fontWeight="600" fontSize="18px">
-                  Daisy Moon
-                </Text>
-                <Text fontSize="14px">Satisfied User</Text>
-              </Box>
-            </Flex>
-            {/* end avatar section */}
-          </Box>
-        </Flex>
+            <Box flexBasis={mediumScreen ? "55%" : "100%"}>
+              <Text lineHeight="35px">
+                &ldquo;I remember my first day with D-edge and thinking is this
+                really going to change anything well now I can confidently say
+                yes it does&ldquo;
+              </Text>
+
+              {/* avatar section */}
+              <Flex mt="60px" gap="20px">
+                <Avatar name="Daisy Moon" src="/avatar/daisy-moon.jpg" />
+                <Box>
+                  <Text fontWeight="600" fontSize="18px">
+                    Daisy Moon
+                  </Text>
+                  <Text fontSize="14px">Satisfied User</Text>
+                </Box>
+              </Flex>
+              {/* end avatar section */}
+            </Box>
+          </Flex>
+          <WaveDecorator
+            pos="absolute"
+            bottom="-12vh"
+            left="-26vw"
+            width="100%"
+            height="100%"
+            zIndex={1}
+          />
+        </Box>
         {/* end testimonials */}
 
         {/* Be a member */}
@@ -216,6 +238,7 @@ const HomeMainContent = () => {
             mt="90px"
             rowGap="40px"
             justifyContent="space-between"
+            pos="relative"
           >
             <Box
               display="flex"
@@ -229,7 +252,14 @@ const HomeMainContent = () => {
             </Box>
 
             <Box flexBasis={mediumScreen ? "43%" : "100%"}>
-              <Image src="/img/home/benefit.png" width="100%" alt="be member" />
+              <Image
+                src="/img/home/benefit.png"
+                width="43%"
+                alt="be member"
+                display="block"
+                right="-70px"
+                position="absolute"
+              />
             </Box>
           </Flex>
         </Box>
@@ -250,7 +280,7 @@ const HomeMainContent = () => {
                 alt="tutorial"
               />
             </Box>
-            <Box flexBasis={mediumScreen ? "46%" : "100%"}>
+            <Box flexBasis={mediumScreen ? "46%" : "100%"} position="relative">
               <Heading>Hotel Booking Trading</Heading>
               <Text lineHeight="35px" mt="20px">
                 At D-edge, we redefine the art of trading, where innovation
@@ -270,31 +300,33 @@ const HomeMainContent = () => {
               >
                 Read More
               </Button>
+              <EasyDecorator
+                pos="absolute"
+                bottom="-40px"
+                right="-200px"
+                width="700px"
+                height="700px"
+              />
             </Box>
           </Flex>
         </Box>
         {/* end hotel booking */}
 
         {/* growth strategies */}
-        <Box mt="180px">
+        <Box mt="180px" pos="relative">
           <Flex
             justifyContent="space-between"
             flexDir={mediumScreen ? "row" : "column"}
             rowGap="20px"
           >
             <Heading as="h1" fontSize={h1FontSize}>
-              Market Team&rsquo;s{" "}
-              <Box as="span" {...gradientTextStyle}>
-                Growth
-              </Box>{" "}
-              Strategies
+              Market Team&rsquo;s Growth Strategies
             </Heading>
 
             <Button colorScheme="primary" display="block" w="fit-content">
               See Our Team
             </Button>
           </Flex>
-
           <Flex
             rowGap="50px"
             justifyContent="space-between"

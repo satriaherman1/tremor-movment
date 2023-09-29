@@ -24,6 +24,7 @@ const GrowthStrategiesBox = ({
     <Box
       padding="35px 30px"
       borderRadius="10px"
+      border="1px solid #666"
       bg="rgba(255, 255, 255, 0.02)"
       {...props}
     >
