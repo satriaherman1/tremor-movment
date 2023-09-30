@@ -55,20 +55,26 @@ const HotelStatistics = () => {
           <HotelStatisticBox key={stats.title} {...stats} />
         ))}
 
-        <Flex
-          bgColor="primary.500"
-          padding="20px 30px"
-          borderRadius="12px"
-          w="100%"
-          alignItems="center"
-          justifyContent="center"
-          color="white"
-        >
-          <SearchIcon fontSize="35px" />
-          <Text fontSize="20px" ml="20px">
-            Search
+        <Box>
+          <Flex
+            bg="linear-gradient(259deg, #903AFD -15.71%, #E657E5 140.15%);
+"
+            padding="16px 30px"
+            borderRadius="12px"
+            w="100%"
+            alignItems="center"
+            justifyContent="center"
+            color="white"
+          >
+            <SearchIcon fontSize="35px" />
+            <Text fontSize="20px" ml="20px">
+              Search
+            </Text>
+          </Flex>
+          <Text color="white" fontSize="14px" mt="5px">
+            Powered by Booking.com
           </Text>
-        </Flex>
+        </Box>
       </Flex>
     </Box>
   );

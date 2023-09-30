@@ -18,6 +18,7 @@ import EasyDecorator from "@components/commons/svg/EasyDecorator";
 import WaveDecorator from "@components/commons/svg/wave";
 import BecomeMentor from "@components/container/home/BecomeMentor";
 import LatestBlog from "@components/container/home/LatestBlog";
+import Supported from "@components/container/home/Supported";
 import GrowthStrategiesBox, {
   IGrowthStrategiesBox,
 } from "@components/fragments/growth-strategies-box";
@@ -125,16 +126,29 @@ const HomeMainContent = () => {
               user-centric approach.
             </Text>
 
-            <Button
-              bg="linear-gradient(261deg, #903AFD 0.37%, #E657E5 175.81%)"
-              color="white"
-              _hover={{
-                bg: " linear-gradient(261deg, #903AFD 0.37%, #E657E5 175.81%)",
-              }}
-              mt="50px"
-            >
-              Download Ebook
-            </Button>
+            <Flex gap="12px">
+              <Button
+                bg="linear-gradient(261deg, #903AFD 0.37%, #E657E5 175.81%)"
+                color="white"
+                _hover={{
+                  bg: " linear-gradient(261deg, #903AFD 0.37%, #E657E5 175.81%)",
+                }}
+                mt="50px"
+              >
+                Download E-book
+              </Button>
+
+              <Button
+                bg="linear-gradient(261deg, #903AFD 0.37%, #E657E5 175.81%)"
+                color="white"
+                _hover={{
+                  bg: " linear-gradient(261deg, #903AFD 0.37%, #E657E5 175.81%)",
+                }}
+                mt="50px"
+              >
+                Learn More
+              </Button>
+            </Flex>
           </Box>
         </Flex>
 
@@ -317,7 +331,7 @@ const HomeMainContent = () => {
           <Flex
             justifyContent="space-between"
             flexDir={mediumScreen ? "row" : "column"}
-            rowGap="20px"
+            gap="20px"
           >
             <Heading as="h1" fontSize={h1FontSize}>
               Market Team&rsquo;s Growth Strategies
@@ -351,6 +365,7 @@ const HomeMainContent = () => {
         {/* become mentor */}
         <BecomeMentor mt="150px" />
         {/* end become mentor */}
+        <Supported mt="190px" />
       </Container>
     </Box>
   );
